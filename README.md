@@ -1,7 +1,7 @@
 # Pagerank Algorithm
 
 ## in PR_Inv:
--I started by doing the QR factorization with Gram-Schmidt. I took each
+- I started by doing the QR factorization with Gram-Schmidt. I took each
 column vector of matrix A, and the following column vectors from the matrix
 I "straighten" and regulate those after the one I took;
 - I took the dimensions of A to know how much to allocate for Q and R.
