@@ -6,15 +6,15 @@ column vector of matrix A, and the following column vectors from the matrix
 I "straighten" and regulate those after the one I took;
 - I took the dimensions of A to know how much to allocate for Q and R.
 firstly Q and R are null matrices, but also the inverse of A. I make a copy of a on V
--I normalized the column vector of V, I normalize it, then straighten the columns
+- I normalized the column vector of V, I normalize it, then straighten the columns
 remained according to the standard one
--I solved the system n times, finding one column each for B, i.e. the reverse
+- I solved the system n times, finding one column each for B, i.e. the reverse
 of A, taking one column each from the transposed Q
--Q * R * B = IN, from where I remove B; IN = eye(N) I write like this here. I pass it in
+- Q * R * B = IN, from where I remove B; IN = eye(N) I write like this here. I pass it in
 the other side and it results: R * B = Q'
--first I calculated the element on line m (last), column i
--B(:,i) is, in fact, the unknown x from SST
--the free term of the system is the i column vector of the QT matrix (Q')
+- first I calculated the element on line m (last), column i
+- B(:,i) is, in fact, the unknown x from SST
+- the free term of the system is the i column vector of the QT matrix (Q')
 - it is taken from the bottom up
 - it's always the column and it's taken in columns
 
@@ -22,10 +22,10 @@ the other side and it results: R * B = Q'
 - after reading the data from the file (the algorithm is also repeated for Iterative,
 Algebraic; I will detail it only for iteratives) I calculate the vectors
 by the two methods
--then I pasted the content of the name variable with ".out" to create the name
+- then I pasted the content of the name variable with ".out" to create the name
 the output file. I opened another file for writing and wrote
 first the number of nodes, then the elements of the two required vectors.
--I made a copy of the second vector and sorted the copy with
+- I made a copy of the second vector and sorted the copy with
 the swap sort algorithm; then I took two forums,
 and I checked for which indexes of R2 and its sorted copy correspond
 the elements, thus writing the position and the relative position.
@@ -54,7 +54,7 @@ exactly the number of accesses to the N pages, then I calculate iteratively unti
 in the mode between R and R calculated in the next step is the threshold data.
 
 ## in Apartenenta:
--u(x)={0, x=0:val1;
+- u(x)={0, x=0:val1;
         a*x+b, x=val1:val2; u continue
         1, x=val2:1;
 - so that u is continuous, we passed the limit: lim(x->val1)(a*x+b)=0&&lim(x->val2)(a*x+b)=1
@@ -66,8 +66,8 @@ and I took cases
 and for PageRank; I detailed only for Iterative), I took a column vector only
 with ones, called O from Ones. and I multiplied each element of it
 with ((1-d) / N); that will be O=[(1-d)/N; (1-d)/N; ...; (1-d)/N] from the algorithm
--R = [(1-d)/N; (1-d)/N; ...; (1-d)/N] + d * M * R, according to wiki
--B = eye(N) - d * M; if from the algorithm I pass what is with R in one part and
+- R = [(1-d)/N; (1-d)/N; ...; (1-d)/N] + d * M * R, according to wiki
+- B = eye(N) - d * M; if from the algorithm I pass what is with R in one part and
 the rest elsewhere (initial: R = O + d * M * R => R - d * M * R = O)
 => (eye(N) (ie a kind of 1, as we gave a common factor) - d*M)*R = O
 and I noted the coefficient of R with B (I don't know what to name them)
